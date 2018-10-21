@@ -82,6 +82,14 @@ public class Main {
 		// System.out.println("htmlAnswer=" + htmlAnswer);
 		main2.saveToFile(htmlAnswer, "htmlAnswer.txt");
 
+		String svgScores="<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
+				+ "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"> <rect x=\"25\" y=\"25\" width=\"200\" height=\"200\" fill=\"lime\" stroke-width=\"4\" stroke=\"pink\" />\n" + 
+				"  <circle cx=\"125\" cy=\"125\" r=\"75\" fill=\"orange\" />\n" + 
+				"  <polyline points=\"50,150 50,200 200,200 200,100\" stroke=\"red\" stroke-width=\"4\" fill=\"none\" />\n" + 
+				"  <line x1=\"50\" y1=\"50\" x2=\"200\" y2=\"200\" stroke=\"blue\" stroke-width=\"4\" />\n" + 
+				"</svg>";
+		main2.saveToFile(svgScores, "scores.svg");
+		
 	}
 
 	public static void main(String[] args) {
