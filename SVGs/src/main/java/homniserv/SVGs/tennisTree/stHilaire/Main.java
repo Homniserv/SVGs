@@ -1,7 +1,9 @@
 package homniserv.SVGs.tennisTree.stHilaire;
 
+import java.io.BufferedWriter;
 import java.io.File;
-
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URI;
 
 import javax.ws.rs.client.Client;
@@ -20,6 +22,38 @@ public class Main {
 		return UriBuilder.fromUri("https://mon-espace-tennis.fft.fr/tournoi/82173737/1027765/decoupages").build();
 	}
 
+	// private static final String FILENAME = "E:\\test\\filename.txt";
+	private static final String FILENAME = "./filename.txt";
+
+	/**
+	 * https://www.mkyong.com/java/how-to-write-to-file-in-java-bufferedwriter-example
+	 * 2)/
+	 */
+	public void saveToFile() {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILENAME))) {
+			String content = "This is the content to write into file\n";
+			bw.write(content);
+			// no need to close it.
+			// bw.close();
+			System.out.println("Done");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void saveToFile(String contentt, String filenamee) {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(filenamee))) {
+			// String content = "This is the content to write into file\n";
+			bw.write(contentt);
+			// no need to close it.
+			// bw.close();
+			System.out.println("Done");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 	/** http://www.vogella.com/tutorials/REST/article.html */
 	private static void client() {
 		ClientConfig config = new ClientConfig();
@@ -35,10 +69,19 @@ public class Main {
 		String xmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_XML).get(String.class);
 		String htmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_HTML).get(String.class);
 
-		//System.out.println("RESPONSE=" + response);
+		// System.out.println("RESPONSE=" + response);
+		// System.out.println("plainAnswer=" + plainAnswer);
 		System.out.println("plainAnswer=" + plainAnswer);
+
+		/** TODO by Spring bean */
+		Main main2 = new Main();
+		main2.saveToFile(plainAnswer, "plainAnswer.txt");
+
 		// System.out.println(xmlAnswer);
-		System.out.println("htmlAnswer=" + htmlAnswer);
+
+		// System.out.println("htmlAnswer=" + htmlAnswer);
+		main2.saveToFile(htmlAnswer, "htmlAnswer.txt");
+
 	}
 
 	public static void main(String[] args) {
@@ -65,6 +108,10 @@ public class Main {
 		}
 
 		client();
+
+		Main main = new Main();
+		// main.saveToFile();
+		main.saveToFile();
 	}
 
 }
