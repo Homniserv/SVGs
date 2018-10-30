@@ -54,7 +54,8 @@ public class Main {
 
 	}
 
-	/** http://www.vogella.com/tutorials/REST/article.html */
+	/** http://www.vogella.com/tutorials/REST/article.html
+	 * REST interne */
 	private static void client() {
 		ClientConfig config = new ClientConfig();
 
@@ -66,8 +67,8 @@ public class Main {
 				.toString();
 
 		String plainAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_PLAIN).get(String.class);
-		String xmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_XML).get(String.class);
-		String htmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_HTML).get(String.class);
+		//String xmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_XML).get(String.class);
+	String htmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_HTML).get(String.class);
 
 		// System.out.println("RESPONSE=" + response);
 		// System.out.println("plainAnswer=" + plainAnswer);
