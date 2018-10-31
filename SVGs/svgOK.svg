@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<body>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg" version="1.1">
 
-<svg height="100" width="100">
-  <circle cx="50" cy="50" r="40" style="stroke-width: 2px;" stroke="blue" stroke-width="3" fill="red" />
-  Sorry, your browser does not support inline SVG.  
-</svg> 
- 
-</body>
-</html>
+
+  <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+
+<circle cx="50" cy="50" r="40" style="stroke-width: 2px;" stroke="blue" stroke-width="3" fill="red" />
+<circle cx="60" cy="60" r="40" style="stroke-width: 2px;" stroke="blue" stroke-width="3" fill="red" />
+<text x="50" y="50" fill="black">I love SVG!</text>
+</svg>

@@ -93,7 +93,9 @@ public class Main {
 				+ "<line x1=\"0\" y1=\"0\" x2=\"999\" y2=\"999\" style=\"stroke-width: 50px;\"></line>" + "</svg>";
 		// + "<line stroke-dasharray=\"10, 5\" x1=\"182\" y1=\"10\" x2=\"350\" y2=\"10\"
 		// style=\"stroke-width: 6px;\"></line>"
-
+svgStHilaire="<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
+		+ "<svg width=\"1000\" height=\"1000\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"
+		+ "<line x1=\"0\" y1=\"0\" x2=\"999\" y2=\"999\" style=\"stroke-width: 5px;\"></line>" + "</svg>";
 		/** TODO by Spring bean */
 		Main main3 = new Main();
 		main3.saveToFile(svgStHilaire, "tennisStHilaire.svg");
