@@ -54,9 +54,10 @@ public class Main {
 
 	}
 
-	/** http://www.vogella.com/tutorials/REST/article.html
-	 * REST interne */
-	private static void client() {
+	/**
+	 * http://www.vogella.com/tutorials/REST/article.html REST interne
+	 */
+	private static void clientREST() {
 		ClientConfig config = new ClientConfig();
 
 		Client client = ClientBuilder.newClient(config);
@@ -67,8 +68,9 @@ public class Main {
 				.toString();
 
 		String plainAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_PLAIN).get(String.class);
-		//String xmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_XML).get(String.class);
-	String htmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_HTML).get(String.class);
+		// String xmlAnswer =
+		// target.path("rest").path("hello").request().accept(MediaType.TEXT_XML).get(String.class);
+		String htmlAnswer = target.path("rest").path("hello").request().accept(MediaType.TEXT_HTML).get(String.class);
 
 		// System.out.println("RESPONSE=" + response);
 		// System.out.println("plainAnswer=" + plainAnswer);
@@ -83,14 +85,18 @@ public class Main {
 		// System.out.println("htmlAnswer=" + htmlAnswer);
 		main2.saveToFile(htmlAnswer, "htmlAnswer.txt");
 
-		String svgScores = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
-				+ "<svg width=\"1000\" height=\"1000\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"
-				+ "<line x1=\"0\" y1=\"0\" x2=\"999\" y2=\"999\" style=\"stroke-width: 50px;\"></line>"
-					+ "</svg>";
-		//+ "<line stroke-dasharray=\"10, 5\" x1=\"182\" y1=\"10\" x2=\"350\" y2=\"10\" style=\"stroke-width: 6px;\"></line>"
-		
-		main2.saveToFile(svgScores, "scores.svg");
+	}
 
+	public void svgCreate() {
+		String svgStHilaire = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
+				+ "<svg width=\"1000\" height=\"1000\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"
+				+ "<line x1=\"0\" y1=\"0\" x2=\"999\" y2=\"999\" style=\"stroke-width: 50px;\"></line>" + "</svg>";
+		// + "<line stroke-dasharray=\"10, 5\" x1=\"182\" y1=\"10\" x2=\"350\" y2=\"10\"
+		// style=\"stroke-width: 6px;\"></line>"
+
+		/** TODO by Spring bean */
+		Main main3 = new Main();
+		main3.saveToFile(svgStHilaire, "tennisStHilaire.svg");
 	}
 
 	public static void main(String[] args) {
@@ -116,11 +122,13 @@ public class Main {
 			}
 		}
 
-		client();
+		clientREST();
 
 		Main main = new Main();
 		// main.saveToFile();
 		main.saveToFile();
+		
+		main.svgCreate() ;
 	}
 
 }
