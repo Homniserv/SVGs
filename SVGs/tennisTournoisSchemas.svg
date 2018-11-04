@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<rect width="1000" height="1000" style="fill:rgb(255,255,255);stroke-width:0;stroke:rgb(255,255,255)" />
+<ellipse cx="65" cy="70" rx="30" ry="60" style="fill:rgb(0,255,0)"/>
+<ellipse cx="65" cy="220" rx="30" ry="60" style="fill:rgb(0,255,0)"/>
+<text x="50" y="20" fill="black">Peter0</text>
+<text x="50" y="70" fill="black">Sco1</text>
+<text x="50" y="120" fill="black">Karis2</text>
+<text x="50" y="170" fill="black">Number3</text>
+<line x1="70" y1="20" x2="100" y2="45.0" style="stroke-width: 5px;" stroke="red"></line>
+<line x1="70" y1="70" x2="100" y2="45.0" style="stroke-width: 5px;" stroke="red"></line>
+<line x1="70" y1="70" x2="100" y2="95.0" style="stroke-width: 5px;" stroke="green"></line>
+<line x1="70" y1="120" x2="100" y2="95.0" style="stroke-width: 5px;" stroke="green"></line>
+<line x1="70" y1="20" x2="40" y2="70" style="stroke-width: 5px;" stroke="blue"></line>
+<line x1="70" y1="120" x2="40" y2="70" style="stroke-width: 5px;" stroke="blue"></line>
+<line x1="70" y1="170" x2="100" y2="195.0" style="stroke-width: 5px;" stroke="red"></line>
+<line x1="70" y1="220" x2="100" y2="195.0" style="stroke-width: 5px;" stroke="red"></line>
+<line x1="70" y1="220" x2="100" y2="245.0" style="stroke-width: 5px;" stroke="green"></line>
+<line x1="70" y1="270" x2="100" y2="245.0" style="stroke-width: 5px;" stroke="green"></line>
+<line x1="70" y1="170" x2="40" y2="220" style="stroke-width: 5px;" stroke="blue"></line>
+<line x1="70" y1="270" x2="40" y2="220" style="stroke-width: 5px;" stroke="blue"></line>
+
+</svg>

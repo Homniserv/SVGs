@@ -7,4 +7,8 @@ public class Person {
 	public Person(String pseudoo) {
 		pseudo = pseudoo;
 	}
+	
+	public String toString() {
+		return this.pseudo;
+	}
 }

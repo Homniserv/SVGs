@@ -15,7 +15,7 @@ import javax.ws.rs.core.UriBuilder;
 
 import org.glassfish.jersey.client.ClientConfig;
 
-public class Main {
+public class MainTennisStHilaire {
 	private static URI getBaseURI() {
 		// return
 		// UriBuilder.fromUri("http://localhost:8080/com.vogella.jersey.first").build();
@@ -57,7 +57,7 @@ public class Main {
 	/**
 	 * http://www.vogella.com/tutorials/REST/article.html REST interne
 	 */
-	private static void clientREST() {
+	private void clientREST() {
 		ClientConfig config = new ClientConfig();
 
 		Client client = ClientBuilder.newClient(config);
@@ -77,7 +77,7 @@ public class Main {
 		System.out.println("plainAnswer=" + plainAnswer);
 
 		/** TODO by Spring bean */
-		Main main2 = new Main();
+		MainTennisStHilaire main2 = new MainTennisStHilaire();
 		main2.saveToFile(plainAnswer, "plainAnswer.txt");
 
 		// System.out.println(xmlAnswer);
@@ -89,20 +89,23 @@ public class Main {
 
 	public void svgCreate() {
 		String svgStHilaire = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
-				+ "<svg width=\"1000\" height=\"1000\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"
+				+ "<svg width=\"1000\" height=\"1000\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">" + "\n"
 				+ "<line x1=\"0\" y1=\"0\" x2=\"999\" y2=\"999\" style=\"stroke-width: 50px;\"></line>" + "</svg>";
 		// + "<line stroke-dasharray=\"10, 5\" x1=\"182\" y1=\"10\" x2=\"350\" y2=\"10\"
 		// style=\"stroke-width: 6px;\"></line>"
-svgStHilaire="<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
-		+ "<svg width=\"1000\" height=\"1000\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">"
-		+ "<line x1=\"0\" y1=\"0\" x2=\"999\" y2=\"999\" style=\"stroke-width: 5px;\"></line>" + "</svg>";
+		svgStHilaire = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
+				+ "<svg width=\"1000\" height=\"1000\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n"
+				+ "<line x1=\"0\" y1=\"0\" x2=\"999\" y2=\"999\" style=\"stroke-width: 5px;\" stroke=\"blue\">\n</line>"
+				+ "<circle cx=\"50\" cy=\"50\" r=\"40\" style=\"stroke-width: 2px;\" stroke=\"blue\" fill=\"red\" />"
+				+ "<ellipse cx=\"240\" cy=\"100\" rx=\"220\" ry=\"30\" style=\"fill:purple\" />"
+				+ "<text x=\"50\" y=\"50\" fill=\"black\">I love SVG!</text>" + "\n</svg>";
 		/** TODO by Spring bean */
-		Main main3 = new Main();
-		main3.saveToFile(svgStHilaire, "tennisStHilaire.svg");
+		// MainTennisStHilaire main3 = new MainTennisStHilaire();
+		// main3.saveToFile(svgStHilaire, "tennisStHilaire.svg");
+		this.saveToFile(svgStHilaire, "tennisStHilaire.svg");
 	}
 
-	public static void main(String[] args) {
-
+	public void lsDir() {
 		System.out.println("txt files are");
 		/** https://alvinalexander.com/blog/post/java/create-files-in-directory */
 
@@ -124,13 +127,19 @@ svgStHilaire="<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
 			}
 		}
 
-		clientREST();
+	}
 
-		Main main = new Main();
+	public static void main(String[] args) {
+		MainTennisStHilaire mainTennisStHilaire = new MainTennisStHilaire();
+
+		mainTennisStHilaire.lsDir();
+
+		mainTennisStHilaire.clientREST();
+
 		// main.saveToFile();
-		main.saveToFile();
-		
-		main.svgCreate() ;
+		mainTennisStHilaire.saveToFile();
+
+		mainTennisStHilaire.svgCreate();
 	}
 
 }
