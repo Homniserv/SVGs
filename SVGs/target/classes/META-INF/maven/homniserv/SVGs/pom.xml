@@ -15,9 +15,43 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<log4j2.version>2.11.0</log4j2.version>
+		
 		<spring.version>5.0.8.RELEASE</spring.version>
+		
+		
+		
+			<springframework.version>3.2.4.RELEASE</springframework.version>
+		<springsecuconfig.version>3.1.4.RELEASE</springsecuconfig.version>
+
+		<hibernate.version>5.3.7.Final</hibernate.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit5.version>5.1.1</junit5.version>
+		<junitplatform.version>1.0.0</junitplatform.version>
+
+
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<junit.version>4.12</junit.version>
+		<junit.jupiter.version>5.1.1</junit.jupiter.version>
+		<junit.vintage.version>5.1.1</junit.vintage.version>
+		<junit.platform.version>1.1.1</junit.platform.version>
 	</properties>
 	<dependencies>
+			<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+
+	
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
